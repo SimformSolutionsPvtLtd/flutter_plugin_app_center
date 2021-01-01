@@ -17,7 +17,7 @@
 {
    if([@"isEnabled" isEqualToString:call.method])
    {
-       result([NSNumber numberWithBool:[MSAnalytics isEnabled]]);
+       result([NSNumber numberWithBool:[MSACAnalytics isEnabled]]);
    }
    else if([@"setEnabled" isEqualToString:call.method])
    {
@@ -25,7 +25,7 @@
         NSNumber *isEnabled = call.arguments[@"isEnabled"];
 
         // Invoking plugin method
-        [MSAnalytics setEnabled:isEnabled.boolValue];
+        [MSACAnalytics setEnabled:isEnabled.boolValue];
         result(nil);
    }
    else if([@"trackEvent" isEqualToString:call.method])
@@ -38,11 +38,11 @@
 
         if([properties count] == 0)
         {
-            [MSAnalytics trackEvent:name];
+            [MSACAnalytics trackEvent:name];
         }
         else
         {
-            [MSAnalytics trackEvent:name withProperties:properties];
+            [MSACAnalytics trackEvent:name withProperties:properties];
         }
         result(nil);
    }
