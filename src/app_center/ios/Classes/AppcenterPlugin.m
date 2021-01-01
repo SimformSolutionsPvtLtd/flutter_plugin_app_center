@@ -16,11 +16,11 @@
 {
   if([@"installId" isEqualToString:call.method])
    {
-        result([[MSAppCenter installId] UUIDString]);
+        result([[MSACAppCenter installId] UUIDString]);
    }
    else if([@"isEnabled" isEqualToString:call.method])
    {
-        result([NSNumber numberWithBool:[MSAppCenter isEnabled]]);
+        result([NSNumber numberWithBool:[MSACAppCenter isEnabled]]);
    }
    else if([@"setEnabled" isEqualToString:call.method])
    {
@@ -28,7 +28,7 @@
         NSNumber *isEnabled = call.arguments[@"isEnabled"];
 
         // Invoking plugin method
-        [MSAppCenter setEnabled:isEnabled.boolValue];
+        [MSACAppCenter setEnabled:isEnabled.boolValue];
         result(nil);
 
    }
@@ -38,7 +38,7 @@
         NSString *secret = call.arguments[@"app_secret"];
 
         // Invoking plugin method
-        [MSAppCenter configureWithAppSecret:secret];
+        [MSACAppCenter configureWithAppSecret:secret];
         result(nil);
    }
    else if([@"start" isEqualToString:call.method])
@@ -54,7 +54,7 @@
         }
 
         // Invoking plugin method
-        [MSAppCenter start:secret withServices:serviceClasses];
+        [MSACAppCenter start:secret withServices:serviceClasses];
         result(nil);
    }
    else
