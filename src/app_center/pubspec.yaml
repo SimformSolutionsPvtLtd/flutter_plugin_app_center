@@ -1,17 +1,21 @@
 name: app_center
 description: Visual Studio App Center plugin for Flutter applications.
-version: 0.3.0
+version: 2.0.0
 authors: 
   - Aloïs Deniel<alois.deniel@outlook.com>
   - Damien Aicheh<damien.aicheh@gmail.com>
 homepage: https://github.com/aloisdeniel/flutter_plugin_appcenter
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0" 
+  sdk: ">=2.12.0 <3.0.0"
   
 dependencies:
   flutter:
     sdk: flutter
+
+dev_dependencies:
+  effective_dart: ^1.3.1
+
 flutter:
   plugin:
     androidPackage: com.aloisdeniel.flutter.app_center

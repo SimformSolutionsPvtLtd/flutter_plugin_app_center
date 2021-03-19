@@ -3,7 +3,12 @@
 //
 
 #import "GeneratedPluginRegistrant.h"
+
+#if __has_include(<app_center_analytics/AppcenterAnalyticsPlugin.h>)
 #import <app_center_analytics/AppcenterAnalyticsPlugin.h>
+#else
+@import app_center_analytics;
+#endif
 
 @implementation GeneratedPluginRegistrant
 

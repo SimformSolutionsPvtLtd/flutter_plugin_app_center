@@ -1,15 +1,15 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart' show defaultTargetPlatform;
 import 'package:flutter/foundation.dart' show TargetPlatform;
+import 'package:flutter/services.dart';
 
 class AppCenterAnalytics {
   static String get id => (defaultTargetPlatform == TargetPlatform.iOS)
       ? "MSAnalytics"
       : "com.microsoft.appcenter.analytics.Analytics";
 
-  static const MethodChannel _channel = const MethodChannel(
+  static const MethodChannel _channel = MethodChannel(
       'aloisdeniel.github.com/flutter_plugin_appcenter/appcenter_analytics');
 
   static Future<bool> get isEnabled =>
@@ -20,7 +20,7 @@ class AppCenterAnalytics {
         'isEnabled': isEnabled,
       });
 
-  static Future trackEvent(String name, [Map<String, String> properties]) =>
+  static Future trackEvent(String name, [Map<String, String>? properties]) =>
       _channel.invokeMethod('trackEvent', <String, dynamic>{
         'name': name,
         'properties': properties ?? <String, String>{},
